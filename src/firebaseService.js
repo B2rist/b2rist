@@ -6,9 +6,9 @@ import {
   getRedirectResult,
   setPersistence,
   browserLocalPersistence,
-  onAuthStateChanged,
 } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
+import { getFunctions, connectFunctionsEmulator, httpsCallable } from 'firebase/functions';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -24,17 +24,24 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const authentication = { checked: false };
+const functions = getFunctions(app);
 
-export const authStateChanges = (callback) => onAuthStateChanged(auth, callback);
+if (window.location.hostname === 'localhost' && process.env.REACT_APP_EMULATOR) {
+  connectFunctionsEmulator(functions, 'localhost', 5001);
+}
 
-getRedirectResult(auth).finally(() => {
-  authentication.checked = true;
-});
+const callFunction = (name) => httpsCallable(functions, name);
+
+export const registerFunction = (name) => callFunction(name);
+
+await getRedirectResult(auth);
+
+export const user = auth.currentUser;
 
 export const signInWithGoogle = () => setPersistence(auth, browserLocalPersistence).then(() => {
     const provider = new GoogleAuthProvider();
-    return signInWithRedirect(auth, provider);
+    provider.addScope('https://www.googleapis.com/auth/photoslibrary.readonly');
+    signInWithRedirect(auth, provider);
   });
 
 export const logout = () => signOut(auth);

@@ -7,9 +7,9 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import logo from './logo.svg';
+import * as PropTypes from 'prop-types';
 
-const RouteCard = () => (
+const RouteCard = ({ route }) => (
     <Card sx={{ display: 'flex', margin: '.5em' }}>
       <Box sx={{
         display: 'flex',
@@ -18,10 +18,10 @@ const RouteCard = () => (
       >
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-            Live From Space
+            {route.name}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
-            Mac Miller
+            {route.description?.slice(30)}
           </Typography>
         </CardContent>
         <Box sx={{
@@ -46,10 +46,14 @@ const RouteCard = () => (
       <CardMedia
         component="img"
         sx={{ width: 151 }}
-        image={logo}
+        image={route.cover}
         alt="Live from space album cover"
       />
     </Card>
   );
 
 export default RouteCard;
+
+RouteCard.propTypes = {
+  route: PropTypes.object.isRequired,
+};

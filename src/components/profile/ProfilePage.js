@@ -1,26 +1,32 @@
-import React, { useCallback, useContext } from 'react';
+import React from 'react';
 import AppHeader from 'components/header/AppHeader';
-import { Context } from 'services/Store';
 import browserHistory from 'browserHistory';
 import { Button } from '@mui/material';
-import { authentication, logout } from 'firebaseService';
+import { logout, user } from 'firebaseService';
+import { useTranslation } from 'react-i18next';
 
 const ProfilePage = () => {
-  const [{ user }] = useContext(Context);
+  const { i18n } = useTranslation();
 
-  const onLogin = useCallback(() => browserHistory.push('/login'), []);
-  const onLogout = useCallback(() => logout(), []);
+  const onLogin = () => browserHistory.push('/login');
+
+  const onLogout = () => logout();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div>
       <AppHeader text="Profile" />
-      {authentication.checked
-        && (user ? (
-          <div>
-            <Button onClick={onLogout}>Logout</Button>
-          </div>
-        ) : (
-          <Button onClick={onLogin}>Login</Button>
-        ))}
+      {user ? (
+        <div>
+          <Button onClick={onLogout}>Logout</Button>
+        </div>
+      ) : (
+        <Button onClick={onLogin}>Login</Button>
+      )}
+      <Button onClick={() => changeLanguage('ru-RU')}>ru</Button>
+      <Button onClick={() => changeLanguage('en')}>en</Button>
     </div>
   );
 };

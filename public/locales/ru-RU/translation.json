@@ -1,0 +1,9 @@
+{
+  "title": "Welcome to react using react-i18next",
+  "mainMenu": {
+    "routes": "маршруты",
+    "favorites": "избранное",
+    "add route": "добавить",
+    "profile": "профиль"
+  }
+}

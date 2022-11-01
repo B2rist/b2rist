@@ -13,7 +13,7 @@ const routes = [
     {
         path: '/routes',
         element: <RoutePage />,
-        label: 'ROUTES',
+        label: 'routes',
         icon: <NearMeIcon />,
         mainMenu: true,
         unAuthenticated: true,
@@ -21,21 +21,21 @@ const routes = [
     {
         path: '/favorites',
         element: <FavoritePage />,
-        label: 'FAVORITES',
+        label: 'favorites',
         icon: <FavoriteIcon />,
         mainMenu: true,
     },
     {
         path: '/add-route',
         element: <AddRoutePage />,
-        label: 'ADD ROUTE',
+        label: 'add route',
         icon: <AddAPhotoIcon />,
         mainMenu: true,
     },
     {
         path: '/profile',
         element: <ProfilePage />,
-        label: 'PROFILE',
+        label: 'profile',
         icon: <PersonPinIcon />,
         mainMenu: true,
         unAuthenticated: true,

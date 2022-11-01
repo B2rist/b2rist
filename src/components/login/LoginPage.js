@@ -1,20 +1,15 @@
-import { signInWithGoogle } from 'firebaseService';
-import React, { useCallback, useContext, useEffect } from 'react';
-import browserHistory from 'browserHistory';
-import { Context } from 'services/Store';
+import { user, signInWithGoogle } from 'firebaseService';
+import React from 'react';
 import GoogleButton from 'react-google-button';
+import './LoginPage.css';
+import { Navigate } from 'react-router-dom';
 
 const LoginPage = () => {
-  const [{ user }] = useContext(Context);
-  const onLogin = useCallback(() => signInWithGoogle(), []);
-  useEffect(() => {
-    if (user) {
-      browserHistory.push('/');
-    }
-  }, [user]);
+  const onLogin = () => signInWithGoogle();
   return (
-    <div>
-      <GoogleButton onClick={onLogin} />
+    <div className="content">
+      <div className="text">Login Form</div>
+      {!user ? <GoogleButton onClick={onLogin} /> : <Navigate to="/" />}
     </div>
   );
 };
