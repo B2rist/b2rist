@@ -1,0 +1,9 @@
+{
+  "title": "Welcome to react using react-i18next",
+  "mainMenu": {
+    "routes": "trasy",
+    "favorites": "ulubione",
+    "add route": "dodaj trasę",
+    "profile": "profil"
+  }
+}

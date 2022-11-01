@@ -1,8 +1,8 @@
 import React from 'react';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material';
-import Store from 'services/Store';
-import Authentication from 'components/Authentication';
+import Store from 'components/Store';
+import AppRouter from 'components/root/AppRouter';
 
 const theme = createTheme({
   palette: {
@@ -22,11 +22,11 @@ const theme = createTheme({
 });
 
 const App = () => (
-    <ThemeProvider theme={theme}>
-      <Store>
-        <Authentication />
-      </Store>
-    </ThemeProvider>
-  );
+  <ThemeProvider theme={theme}>
+    <Store>
+      <AppRouter />
+    </Store>
+  </ThemeProvider>
+);
 
 export default App;

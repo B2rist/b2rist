@@ -33,6 +33,10 @@ const convertedRoutes = [
     path: '/',
     element: <Navigate to="/routes" replace />,
   },
+    {
+        path: '/',
+        element: <Navigate to="/routes" replace />,
+    },
   {
   element: <Main />,
     children: [

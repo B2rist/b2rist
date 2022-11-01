@@ -1,16 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import { Navigate } from 'react-router-dom';
-import { Context } from 'services/Store';
-import { authentication } from 'firebaseService';
+import { user } from 'firebaseService';
 
-const ProtectedRoute = ({ route }) => {
-  const [{ user }] = useContext(Context);
-  if (authentication.checked && !user) {
-    return <Navigate to="/login" />;
-  }
-  return route.element;
-};
+const ProtectedRoute = ({ route }) => (user ? route.element : <Navigate to="/login" />);
 
 ProtectedRoute.propTypes = {
   route: PropTypes.object.isRequired,

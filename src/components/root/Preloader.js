@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Skeleton, Typography } from '@mui/material';
 
 const Preloader = ({ loading, children }) => (loading ? (
-    <Box pr={2} margin={2}>
+    <Box margin={2}>
       <Typography variant="h1">
         <Skeleton variant="text" />
       </Typography>
