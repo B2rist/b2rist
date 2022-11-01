@@ -1,7 +1,6 @@
 import React from 'react';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material';
-import Store from 'components/Store';
 import AppRouter from 'components/root/AppRouter';
 
 const theme = createTheme({
@@ -23,9 +22,7 @@ const theme = createTheme({
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Store>
-      <AppRouter />
-    </Store>
+    <AppRouter />
   </ThemeProvider>
 );
 

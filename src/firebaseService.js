@@ -44,4 +44,4 @@ export const signInWithGoogle = () => setPersistence(auth, browserLocalPersisten
     signInWithRedirect(auth, provider);
   });
 
-export const logout = () => signOut(auth);
+export const logout = () => signOut(auth).then(() => window.location.reload());

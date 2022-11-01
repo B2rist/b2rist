@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppHeader from 'components/header/AppHeader';
 import RouteCard from 'components/route/RouteCard';
-import useGetRouteList from 'services/useGetRouteList';
-import useSelector from 'services/useSelector';
+import useFetch from 'services/useFetch';
+import { getRoutes } from 'services/firebaseCallFunctions';
 
 const RoutePage = () => {
-  const [{ data: routes }] = useSelector('routeList');
-  useGetRouteList();
+  const [page] = useState({ id: 0 });
+  const { data: routes } = useFetch(getRoutes, page, []);
   return (
     <div>
       <AppHeader text="Routes" />
       <div style={{ textAlign: 'center' }}>
-          {routes.map((route) => <RouteCard route={route} />)}
+        {routes.map((route) => (
+          <RouteCard key={route.id} route={route} />
+        ))}
       </div>
     </div>
   );

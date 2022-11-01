@@ -25,7 +25,7 @@ const ProfilePage = () => {
       ) : (
         <Button onClick={onLogin}>Login</Button>
       )}
-      <Button onClick={() => changeLanguage('ru-RU')}>ru</Button>
+      <Button onClick={() => changeLanguage('ru')}>ru</Button>
       <Button onClick={() => changeLanguage('en')}>en</Button>
     </div>
   );
