@@ -5,6 +5,7 @@ import {
   signOut,
   getRedirectResult,
   setPersistence,
+  onAuthStateChanged,
   browserLocalPersistence,
 } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
@@ -34,9 +35,9 @@ const callFunction = (name) => httpsCallable(functions, name);
 
 export const registerFunction = (name) => callFunction(name);
 
-await getRedirectResult(auth);
+getRedirectResult(auth);
 
-export const user = auth.currentUser;
+export const authStateChanges = (callback) => onAuthStateChanged(auth, callback);
 
 export const signInWithGoogle = () => setPersistence(auth, browserLocalPersistence).then(() => {
     const provider = new GoogleAuthProvider();
@@ -44,4 +45,4 @@ export const signInWithGoogle = () => setPersistence(auth, browserLocalPersisten
     signInWithRedirect(auth, provider);
   });
 
-export const logout = () => signOut(auth).then(() => window.location.reload());
+export const logout = () => signOut(auth);

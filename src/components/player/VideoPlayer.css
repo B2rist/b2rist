@@ -1,0 +1,12 @@
+body {
+  overflow: hidden;
+}
+
+.audio-control-card {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: 2em;
+}

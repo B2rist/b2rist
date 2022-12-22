@@ -1,10 +1,10 @@
 import React from 'react';
 import AppHeader from 'components/header/AppHeader';
 
-const AddRoutePage = () => (
+const SharingPage = () => (
   <div>
-    <AppHeader text="Add route" />
+    <AppHeader text="Sharing" />
   </div>
 );
 
-export default AddRoutePage;
+export default SharingPage;

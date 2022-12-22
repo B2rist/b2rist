@@ -3,7 +3,7 @@
   "mainMenu": {
     "routes": "routes",
     "favorites": "favorites",
-    "add route": "add route",
+    "sharing": "sharing",
     "profile": "profile"
   }
 }

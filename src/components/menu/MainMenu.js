@@ -1,28 +1,27 @@
 import React from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
 import './MainMenu.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, matchRoutes, useLocation } from 'react-router-dom';
 import routes from 'routes';
 import { useTranslation } from 'react-i18next';
 
 const menuRoutes = routes.filter((route) => route.mainMenu);
 
-const findPath = (path) => menuRoutes.find((match) => match.path?.includes(path))?.path;
-
 const MainMenu = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
   const { t } = useTranslation();
+  const [{ route }] = matchRoutes(routes, location);
   return (
     <Box className="main-menu">
-      <Tabs value={findPath(pathname)} centered>
-        {menuRoutes.map((route) => (
+      <Tabs value={route.menuGroup || route.path} centered>
+        {menuRoutes.map((item) => (
           <Tab
-            key={route.path}
-            icon={route.icon}
-            label={t(`mainMenu.${route.label}`)}
+            key={item.path}
+            icon={item.icon}
+            label={<span className="main-menu-label">{t(`mainMenu.${item.label}`)}</span>}
             component={Link}
-            to={route.path}
-            value={route.path}
+            to={item.path}
+            value={item.path}
           />
         ))}
       </Tabs>
