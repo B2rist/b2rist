@@ -1,14 +1,17 @@
 .MuiTabs-indicator {
-    display: none
+  display: none;
 }
 
 .main-menu {
-    width: 100%;
-    bgcolor: 'background.paper';
-    position: fixed;
-    bottom: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .css-wbs4vq-MuiButtonBase-root-MuiTab-root {
-    padding: 0 !important;
+  padding: 0 !important;
+}
+
+.main-menu-label {
+  font-size: 0.9em;
 }

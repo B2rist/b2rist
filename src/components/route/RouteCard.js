@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import * as PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const RouteCard = ({ route }) => (
     <Card sx={{ display: 'flex', margin: '.5em' }}>
@@ -31,7 +32,7 @@ const RouteCard = ({ route }) => (
           pb: 1,
         }}
         >
-          <IconButton aria-label="play/pause">
+          <IconButton aria-label="play" component={Link} to={`/play/${route.id}`}>
             <PlayArrowIcon sx={{
               height: 38,
               width: 38,

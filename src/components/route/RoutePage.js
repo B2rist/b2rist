@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppHeader from 'components/header/AppHeader';
 import RouteCard from 'components/route/RouteCard';
-import useFetch from 'services/useFetch';
-import { getRoutes } from 'services/firebaseCallFunctions';
+import { getRoutes, selectRouteList } from 'services/routeSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const RoutePage = () => {
   const [page] = useState({ id: 0 });
-  const { data: routes } = useFetch(getRoutes, page, []);
+  const dispatch = useDispatch();
+  const routes = useSelector((state) => selectRouteList(state));
+   useEffect(() => {
+    dispatch(getRoutes(page));
+  }, [dispatch, page]);
   return (
     <div>
       <AppHeader text="Routes" />
@@ -19,4 +23,4 @@ const RoutePage = () => {
   );
 };
 
-export default RoutePage;
+export default React.memo(RoutePage);

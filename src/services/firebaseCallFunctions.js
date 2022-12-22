@@ -1,5 +1,5 @@
 import { registerFunction } from 'firebaseService';
 
-export const getRoutes = registerFunction('getRoutes');
+export const getRoutesFunction = registerFunction('route-getRoutes');
 
-export const getPointsByIds = registerFunction('getPointsByIds');
+export const getRoutesByIdFunction = registerFunction('route-getRouteById');

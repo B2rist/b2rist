@@ -1,7 +1,9 @@
 import React from 'react';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material';
-import AppRouter from 'components/root/AppRouter';
+import AuthenticationProvider from 'components/AuthenticationProvider';
+import { Provider } from 'react-redux';
+import store from 'store';
 
 const theme = createTheme({
   palette: {
@@ -22,7 +24,9 @@ const theme = createTheme({
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <AppRouter />
+    <Provider store={store}>
+      <AuthenticationProvider />
+    </Provider>
   </ThemeProvider>
 );
 

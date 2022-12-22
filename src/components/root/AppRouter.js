@@ -2,33 +2,23 @@ import React, { Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 import routes from 'routes';
 import Preloader from 'components/root/Preloader';
-import ProtectedRoute from 'components/root/ProtectedRoute';
+import ProtectedActionRoute from 'components/root/ProtectedActionRoute';
 import Main from 'components/main/Main';
 import HistoryRouter from 'components/root/HistoryRouter';
 import history from 'browserHistory';
-import LoginPage from 'components/login/LoginPage';
 
-const convertPublicRoutes = (routeList) => routeList.map((route) => ({
-    path: route.path,
-    element: <Suspense fallback={<Preloader loading />}>{route.element}</Suspense>,
-    ...(route.children ? { children: convertPublicRoutes(route.children) } : {}),
-  }));
-
-const convertProtectedRoutes = (routeList) => routeList.map((route) => ({
+const convertRoutes = (routeList) => routeList.map((route) => ({
     path: route.path,
     element: (
       <Suspense fallback={<Preloader loading />}>
-        {route.path ? <ProtectedRoute route={route} /> : route.element}
+        {route.path ? <ProtectedActionRoute route={route} /> : route.element}
       </Suspense>
     ),
-    ...(route.children ? { children: convertProtectedRoutes(route.children) } : {}),
+    ...(route.children ? { children: convertRoutes(route.children) } : {}),
   }));
 
 const convertedRoutes = [
-  {
-    path: '/login',
-    element: <LoginPage />,
-  },
+  ...convertRoutes(routes.filter((route) => route.fullScreen)),
   {
     path: '/',
     element: <Navigate to="/routes" replace />,
@@ -36,8 +26,7 @@ const convertedRoutes = [
   {
   element: <Main />,
     children: [
-      ...convertPublicRoutes(routes.filter((route) => route.unAuthenticated)),
-      ...convertProtectedRoutes(routes.filter((route) => !route.unAuthenticated))],
+      ...convertRoutes(routes.filter((route) => !route.fullScreen))],
   },
 ];
 

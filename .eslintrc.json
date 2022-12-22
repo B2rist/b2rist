@@ -29,7 +29,6 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/jsx-props-no-spreading": "off",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
         "max-len": [2, { "code": 120, "tabWidth": 4 }],
         "react/function-component-definition": [
             2,
@@ -46,6 +45,7 @@
                 "patterns": ["../*"]
             }
         ],
+        "no-param-reassign": 0,
         "no-console": [2, { "allow": ["warn", "error"] }],
         "no-alert": "error",
 
