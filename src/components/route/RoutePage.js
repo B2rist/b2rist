@@ -8,7 +8,7 @@ const RoutePage = () => {
   const [page] = useState({ id: 0 });
   const dispatch = useDispatch();
   const routes = useSelector((state) => selectRouteList(state));
-   useEffect(() => {
+  useEffect(() => {
     dispatch(getRoutes(page));
   }, [dispatch, page]);
   return (

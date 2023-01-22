@@ -9,49 +9,48 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { imageLink } from 'utils/googleLinks';
 
 const RouteCard = ({ route }) => (
-    <Card sx={{ display: 'flex', margin: '.5em' }}>
-      <Box sx={{
+  <Card sx={{ display: 'flex', margin: '.5em' }}>
+    <Box
+      sx={{
         display: 'flex',
         flexDirection: 'column',
       }}
-      >
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            {route.name}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            {route.description?.slice(30)}
-          </Typography>
-        </CardContent>
-        <Box sx={{
+    >
+      <CardContent sx={{ flex: '1 0 auto' }}>
+        <Typography component="div" variant="h5">
+          {route.name}
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          {route.description?.slice(30)}
+        </Typography>
+      </CardContent>
+      <Box
+        sx={{
           display: 'flex',
           alignItems: 'center',
           pl: 1,
           pb: 1,
         }}
-        >
-          <IconButton aria-label="play" component={Link} to={`/play/${route.id}`}>
-            <PlayArrowIcon sx={{
+      >
+        <IconButton aria-label="play" component={Link} to={`/play/${route.id}`}>
+          <PlayArrowIcon
+            sx={{
               height: 38,
               width: 38,
             }}
-            />
-          </IconButton>
-          <IconButton aria-label="add-favorites">
-            <FavoriteIcon />
-          </IconButton>
-        </Box>
+          />
+        </IconButton>
+        <IconButton aria-label="add-favorites">
+          <FavoriteIcon />
+        </IconButton>
       </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image={route.cover}
-        alt="Live from space album cover"
-      />
-    </Card>
-  );
+    </Box>
+    <CardMedia component="img" sx={{ width: 151 }} image={imageLink(route.cover)} alt="Live from space album cover" />
+  </Card>
+);
 
 export default RouteCard;
 

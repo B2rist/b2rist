@@ -20,9 +20,7 @@ const PlayRoutePage = () => {
   const route = useSelector((state) => selectRoute(state));
   return (
     <FullScreenContainer>
-      <div style={{ textAlign: 'center' }}>
-        {route && route.points[0] && mediaResolver(route.points[0])}
-      </div>
+      <div style={{ textAlign: 'center' }}>{route && route.points[0] && mediaResolver(route.points[0])}</div>
     </FullScreenContainer>
   );
 };

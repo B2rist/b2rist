@@ -10,13 +10,14 @@ const AuthenticationProvider = () => {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(
-() => authStateChanges((user) => {
+    () =>
+      authStateChanges((user) => {
         dispatch(userChanged(user));
         if (!initialized) {
           setInitialized(true);
         }
       }),
-    [initialized, dispatch],
+    [initialized, dispatch]
   );
 
   return initialized ? <AppRouter /> : <Preloader loading />;

@@ -1,9 +1,15 @@
 {
-    "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
     "env": {
         "browser": true,
-        "jest/globals": true
+        "es2021": true
     },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react-hooks/recommended",
+        "prettier"
+    ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "requireConfigFile": false,
@@ -11,25 +17,26 @@
             "babelrc": false,
             "configFile": false,
             "presets": ["@babel/preset-env", "@babel/preset-react"]
-        }
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
-    "plugins": ["jest", "react-hooks"],
+    "overrides": [
+    ],
     "settings": {
-        "import/resolver": {
-            "node": {
-                "paths": ["src", "resources"]
-            }
+        "react": {
+            "version": "detect"
         }
     },
+    "plugins": ["react", "prettier"],
     "rules": {
-        "indent": "off",
-        "react/jsx-indent": "off",
-        "react/jsx-indent-props": "off",
-        "react/forbid-prop-types": "off",
+        "prettier/prettier": "error",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/jsx-props-no-spreading": "off",
         "react-hooks/rules-of-hooks": "error",
-        "max-len": [2, { "code": 120, "tabWidth": 4 }],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "max-len": [2, { "code": 120, "tabWidth": 2 }],
         "react/function-component-definition": [
             2,
             {
@@ -37,30 +44,7 @@
                 "unnamedComponents": "arrow-function"
             }
         ],
-        "arrow-body-style": ["error", "as-needed"],
-        "arrow-parens": [2, "always"],
-        "no-restricted-imports": [
-            "error",
-            {
-                "patterns": ["../*"]
-            }
-        ],
-        "no-param-reassign": 0,
         "no-console": [2, { "allow": ["warn", "error"] }],
-        "no-alert": "error",
-
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-inline-snapshots": "off",
-        "jest/prefer-to-have-length": "off",
-        "jest/prefer-called-with": "off",
-        "jest/no-hooks": [
-            "error",
-            {
-                "allow": ["afterEach", "beforeEach"]
-            }
-        ],
-        "jest/valid-expect": "error"
+        "no-alert": "error"
     }
 }

@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import * as PropTypes from 'prop-types';
 import './AudioPlayer.css';
+import { audioLink, imageLink } from 'utils/googleLinks';
 
 const AudioPlayer = ({ point }) => {
   const timeMap = useMemo(() => {
@@ -25,7 +26,6 @@ const AudioPlayer = ({ point }) => {
   const onTimeUpdate = (event) => {
     const time = event.nativeEvent.srcElement.currentTime;
     let imageKey = timeMap[0];
-    // eslint-disable-next-line no-restricted-syntax
     for (const timeMapKey of timeMap) {
       if (time > timeMapKey.time) {
         imageKey = timeMapKey;
@@ -40,13 +40,12 @@ const AudioPlayer = ({ point }) => {
     <Card sx={{ textAlign: 'center' }}>
       <CardContent className="audio-control-card">
         <Typography component="div" variant="h5">
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <audio controls="controls" style={{ width: '600px' }} onTimeUpdate={onTimeUpdate} autoPlay>
-            <source src={point.audioContent} />
+            <source src={audioLink(point.audioContent)} />
           </audio>
         </Typography>
       </CardContent>
-      <CardMedia component="img" image={currentImage.image} alt="route point" />
+      <CardMedia component="img" image={imageLink(currentImage.image)} alt="route point" />
     </Card>
   );
 };

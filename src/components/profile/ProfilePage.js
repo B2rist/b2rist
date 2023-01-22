@@ -25,7 +25,9 @@ const ProfilePage = () => {
           <Typography variant="h6">{user.displayName}</Typography>
         </div>
       ) : (
-        <Button component={Link} to="/login">Login</Button>
+        <Button component={Link} to="/login">
+          Login
+        </Button>
       )}
       <Button onClick={() => changeLanguage('ru')}>ru</Button>
       <Button onClick={() => changeLanguage('en')}>en</Button>
