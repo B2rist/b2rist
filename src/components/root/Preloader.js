@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Skeleton, Typography } from '@mui/material';
 
-const Preloader = ({ loading, children }) => (loading ? (
+const Preloader = ({ loading, children }) =>
+  loading ? (
     <Box margin={2}>
       <Typography variant="h1">
         <Skeleton variant="text" />
@@ -11,7 +12,7 @@ const Preloader = ({ loading, children }) => (loading ? (
     </Box>
   ) : (
     { children }
-  ));
+  );
 
 export default Preloader;
 

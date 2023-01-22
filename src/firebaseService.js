@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   GoogleAuthProvider,
   getAuth,
@@ -39,7 +40,8 @@ getRedirectResult(auth);
 
 export const authStateChanges = (callback) => onAuthStateChanged(auth, callback);
 
-export const signInWithGoogle = () => setPersistence(auth, browserLocalPersistence).then(() => {
+export const signInWithGoogle = () =>
+  setPersistence(auth, browserLocalPersistence).then(() => {
     const provider = new GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/photoslibrary.readonly');
     signInWithRedirect(auth, provider);

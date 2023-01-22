@@ -2,7 +2,7 @@
   "title": "Welcome to react using react-i18next",
   "mainMenu": {
     "routes": "маршруты",
-    "favorites": "избранное",
+    "home": "сайт",
     "sharing": "общее",
     "profile": "профиль"
   }

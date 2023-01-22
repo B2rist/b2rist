@@ -1,23 +1,23 @@
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
-import { getRoutesByIdFunction, getRoutesFunction } from 'services/firebaseCallFunctions';
+import { getByIdFunction, getAllFunction } from 'services/firebaseCallFunctions';
 
 const initialState = {
   routeList: [],
   route: null,
 };
 
-export const getRoutes = createAsyncThunk('route/getRoutes', async (request, { rejectWithValue }) => {
+export const getRoutes = createAsyncThunk('route/getAll', async (request, { rejectWithValue }) => {
   try {
-    const response = await getRoutesFunction(request);
+    const response = await getAllFunction(request);
     return response.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
   }
 });
 
-export const getRouteById = createAsyncThunk('route/getRouteById', async (request, { rejectWithValue }) => {
+export const getRouteById = createAsyncThunk('route/getById', async (request, { rejectWithValue }) => {
   try {
-    const response = await getRoutesByIdFunction(request);
+    const response = await getByIdFunction(request);
     return response.data;
   } catch (err) {
     return rejectWithValue(err.response.data);

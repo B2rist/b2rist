@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import * as PropTypes from 'prop-types';
 import './FullScreenContainer.css';
 import CloseIcon from '@mui/icons-material/Close';
@@ -9,18 +9,26 @@ import { Link } from 'react-router-dom';
 const FullScreenContainer = ({ children }) => {
   const iconButton = useRef();
 
-  const hideButton = () => setTimeout(() => {
-    iconButton.current.style.opacity = 0;
-  }, 5000);
+  const hideButton = useCallback(
+    () =>
+      setTimeout(() => {
+        if (iconButton && iconButton.current) {
+          iconButton.current.style.opacity = 0;
+        }
+      }, 3000),
+    []
+  );
 
-  const showButton = () => {
-    iconButton.current.style.opacity = 1;
+  const showButton = useCallback(() => {
+    if (iconButton && iconButton.current && iconButton.current.style) {
+      iconButton.current.style.opacity = 1;
+    }
     hideButton();
-  };
+  }, [hideButton, iconButton]);
 
   useEffect(() => {
     hideButton();
-  }, []);
+  }, [hideButton]);
 
   return (
     <Box onClick={showButton}>

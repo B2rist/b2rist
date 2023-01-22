@@ -7,7 +7,8 @@ const store = configureStore({
     user: userReducer,
     route: routeReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['user/userChanged'],
       },
