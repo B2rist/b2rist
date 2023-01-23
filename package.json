@@ -39,7 +39,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eslint": "eslint src/**/*.{js,jsx,ts,tsx,json} --ignore-pattern *.test.js",
-    "lint:report": "eslint --output-file eslint_report.json --format json . src/**/*.{js,jsx,ts,tsx,json}s --ignore-pattern *.test.js",
+    "lint:report": "eslint --output-file eslint_report.json --format json src/**/*.{js,jsx,ts,tsx,json} --ignore-pattern *.test.js",
     "eslint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json} --ignore-pattern *.test.js",
     "eject": "react-scripts eject"
   },
