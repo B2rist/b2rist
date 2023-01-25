@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Tab, Tabs } from "@mui/material";
-import "./MainMenu.css";
-import { Link, matchRoutes, useLocation } from "react-router-dom";
-import routes from "routes";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { Box, Tab, Tabs } from '@mui/material';
+import './MainMenu.css';
+import { Link, matchRoutes, useLocation } from 'react-router-dom';
+import routes from 'routes';
+import { useTranslation } from 'react-i18next';
 
 const menuRoutes = routes.filter((route) => route.mainMenu);
 
@@ -18,11 +18,7 @@ const MainMenu = () => {
           <Tab
             key={item.path}
             icon={item.icon}
-            label={
-              <span className="main-menu-label">
-                {t(`mainMenu.${item.label}`)}
-              </span>
-            }
+            label={<span className="main-menu-label">{t(`mainMenu.${item.label}`)}</span>}
             component={Link}
             to={item.path}
             value={item.path}

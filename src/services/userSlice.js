@@ -1,19 +1,19 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: null,
+  user: null
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     userChanged(state, action) {
       state.user = action.payload && {
-        displayName: action.payload.displayName,
+        displayName: action.payload.displayName
       };
-    },
-  },
+    }
+  }
 });
 
 const selectSelf = (state) => state.user;

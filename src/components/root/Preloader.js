@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Skeleton, Typography } from "@mui/material";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box, Skeleton, Typography } from '@mui/material';
 
 const Preloader = ({ loading, children }) =>
   loading ? (
@@ -18,9 +18,9 @@ export default Preloader;
 
 Preloader.propTypes = {
   children: PropTypes.node,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 Preloader.defaultProps = {
-  children: <div />,
+  children: <div />
 };

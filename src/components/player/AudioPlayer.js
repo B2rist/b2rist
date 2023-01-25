@@ -1,11 +1,11 @@
-import React, { useMemo, useState } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import * as PropTypes from "prop-types";
-import "./AudioPlayer.css";
-import { audioLink, imageLink } from "utils/googleLinks";
+import React, { useMemo, useState } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import * as PropTypes from 'prop-types';
+import './AudioPlayer.css';
+import { audioLink, imageLink } from 'utils/googleLinks';
 
 const AudioPlayer = ({ point }) => {
   const timeMap = useMemo(() => {
@@ -37,24 +37,15 @@ const AudioPlayer = ({ point }) => {
   };
 
   return (
-    <Card sx={{ textAlign: "center" }}>
+    <Card sx={{ textAlign: 'center' }}>
       <CardContent className="audio-control-card">
         <Typography component="div" variant="h5">
-          <audio
-            controls="controls"
-            style={{ width: "600px" }}
-            onTimeUpdate={onTimeUpdate}
-            autoPlay
-          >
+          <audio controls="controls" style={{ width: '600px' }} onTimeUpdate={onTimeUpdate} autoPlay>
             <source src={audioLink(point.audioContent)} />
           </audio>
         </Typography>
       </CardContent>
-      <CardMedia
-        component="img"
-        image={imageLink(currentImage.image)}
-        alt="route point"
-      />
+      <CardMedia component="img" image={imageLink(currentImage.image)} alt="route point" />
     </Card>
   );
 };
@@ -62,5 +53,5 @@ const AudioPlayer = ({ point }) => {
 export default AudioPlayer;
 
 AudioPlayer.propTypes = {
-  point: PropTypes.object.isRequired,
+  point: PropTypes.object.isRequired
 };

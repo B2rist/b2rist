@@ -1,11 +1,11 @@
-import React from "react";
-import AppHeader from "components/header/AppHeader";
-import { Button, Typography } from "@mui/material";
-import { logout } from "firebaseService";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "services/userSlice";
+import React from 'react';
+import AppHeader from 'components/header/AppHeader';
+import { Button, Typography } from '@mui/material';
+import { logout } from 'firebaseService';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'services/userSlice';
 
 const ProfilePage = () => {
   const user = useSelector((state) => selectUser(state));
@@ -29,8 +29,8 @@ const ProfilePage = () => {
           Login
         </Button>
       )}
-      <Button onClick={() => changeLanguage("ru")}>ru</Button>
-      <Button onClick={() => changeLanguage("en")}>en</Button>
+      <Button onClick={() => changeLanguage('ru')}>ru</Button>
+      <Button onClick={() => changeLanguage('en')}>en</Button>
     </div>
   );
 };

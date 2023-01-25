@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo } from "react";
-import * as PropTypes from "prop-types";
-import { Navigate, useParams } from "react-router-dom";
-import { selectUser } from "services/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useMemo } from 'react';
+import * as PropTypes from 'prop-types';
+import { Navigate, useParams } from 'react-router-dom';
+import { selectUser } from 'services/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProtectedActionRoute = ({ route }) => {
   const pathParams = useParams();
@@ -19,7 +19,7 @@ const ProtectedActionRoute = ({ route }) => {
 };
 
 ProtectedActionRoute.propTypes = {
-  route: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 export default ProtectedActionRoute;
