@@ -1,58 +1,58 @@
-import React, { lazy } from 'react';
-import PeopleAlt from '@mui/icons-material/PeopleAlt';
-import NearMeIcon from '@mui/icons-material/NearMe';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
-import { getRouteById } from 'services/routeSlice';
-import { Home } from '@mui/icons-material';
+import React, { lazy } from "react";
+import PeopleAlt from "@mui/icons-material/PeopleAlt";
+import NearMeIcon from "@mui/icons-material/NearMe";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
+import { getRouteById } from "services/routeSlice";
+import { Home } from "@mui/icons-material";
 
-const LoginPage = lazy(() => import('components/login/LoginPage'));
-const SharingPage = lazy(() => import('components/sharing/SharingPage'));
-const ProfilePage = lazy(() => import('components/profile/ProfilePage'));
-const HomePage = lazy(() => import('components/home/HomePage'));
-const PlayRoutePage = lazy(() => import('components/route/PlayRoutePage'));
-const RoutePage = lazy(() => import('components/route/RoutePage'));
+const LoginPage = lazy(() => import("components/login/LoginPage"));
+const SharingPage = lazy(() => import("components/sharing/SharingPage"));
+const ProfilePage = lazy(() => import("components/profile/ProfilePage"));
+const HomePage = lazy(() => import("components/home/HomePage"));
+const PlayRoutePage = lazy(() => import("components/route/PlayRoutePage"));
+const RoutePage = lazy(() => import("components/route/RoutePage"));
 
 const routes = [
   {
-    path: '/login',
+    path: "/login",
     element: <LoginPage />,
     unAuthenticated: true,
     fullScreen: true,
   },
   {
-    path: '/home',
+    path: "/home",
     element: <HomePage />,
-    label: 'home',
+    label: "home",
     icon: <Home />,
     unAuthenticated: true,
     mainMenu: true,
   },
   {
-    path: '/routes',
+    path: "/routes",
     element: <RoutePage />,
-    label: 'routes',
+    label: "routes",
     icon: <NearMeIcon />,
     mainMenu: true,
     unAuthenticated: true,
   },
   {
-    path: '/sharing',
+    path: "/sharing",
     element: <SharingPage />,
-    label: 'sharing',
+    label: "sharing",
     icon: <PeopleAlt />,
     mainMenu: true,
   },
   {
-    path: '/profile',
+    path: "/profile",
     element: <ProfilePage />,
-    label: 'profile',
+    label: "profile",
     icon: <PersonPinIcon />,
     mainMenu: true,
     unAuthenticated: true,
   },
   {
-    path: '/play/:id',
-    menuGroup: '/routes',
+    path: "/play/:id",
+    menuGroup: "/routes",
     element: <PlayRoutePage />,
     unAuthenticated: true,
     fullScreen: true,

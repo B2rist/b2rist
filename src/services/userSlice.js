@@ -1,11 +1,11 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: null,
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     userChanged(state, action) {

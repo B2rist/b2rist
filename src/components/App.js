@@ -1,26 +1,26 @@
-import React from 'react';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material';
-import AuthenticationProvider from 'components/AuthenticationProvider';
-import { Provider } from 'react-redux';
-import store from 'store';
-import { green, grey, red } from '@mui/material/colors';
+import React from "react";
+import { createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material";
+import AuthenticationProvider from "components/AuthenticationProvider";
+import { Provider } from "react-redux";
+import store from "store";
+import { green, grey, red } from "@mui/material/colors";
 
 const rawTheme = createTheme({
   palette: {
     primary: {
-      light: '#69696a',
-      main: '#28282a',
-      dark: '#1e1e1f',
+      light: "#69696a",
+      main: "#28282a",
+      dark: "#1e1e1f",
     },
     secondary: {
-      light: '#fff5f8',
-      main: '#ff3366',
-      dark: '#e62958',
+      light: "#fff5f8",
+      main: "#ff3366",
+      dark: "#e62958",
     },
     warning: {
-      main: '#ffc071',
-      dark: '#ffb25e',
+      main: "#ffc071",
+      dark: "#ffb25e",
     },
     error: {
       light: red[50],
@@ -46,7 +46,7 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: "'Roboto Condensed', sans-serif",
-  textTransform: 'uppercase',
+  textTransform: "uppercase",
 };
 
 const theme = {

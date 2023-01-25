@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Router } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useLayoutEffect, useState } from "react";
+import { Router } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const HistoryRouter = ({ history, ...props }) => {
   const [state, setState] = useState({
@@ -8,7 +8,14 @@ const HistoryRouter = ({ history, ...props }) => {
     location: history.location,
   });
   useLayoutEffect(() => history.listen(setState), [history]);
-  return <Router {...props} location={state.location} navigationType={state.action} navigator={history} />;
+  return (
+    <Router
+      {...props}
+      location={state.location}
+      navigationType={state.action}
+      navigator={history}
+    />
+  );
 };
 
 export default HistoryRouter;

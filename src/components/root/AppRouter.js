@@ -1,11 +1,11 @@
-import React, { Suspense } from 'react';
-import { Navigate, useRoutes } from 'react-router-dom';
-import routes from 'routes';
-import Preloader from 'components/root/Preloader';
-import ProtectedActionRoute from 'components/root/ProtectedActionRoute';
-import Main from 'components/main/Main';
-import HistoryRouter from 'components/root/HistoryRouter';
-import history from 'browserHistory';
+import React, { Suspense } from "react";
+import { Navigate, useRoutes } from "react-router-dom";
+import routes from "routes";
+import Preloader from "components/root/Preloader";
+import ProtectedActionRoute from "components/root/ProtectedActionRoute";
+import Main from "components/main/Main";
+import HistoryRouter from "components/root/HistoryRouter";
+import history from "browserHistory";
 
 const convertRoutes = (routeList) =>
   routeList.map((route) => ({
@@ -21,8 +21,8 @@ const convertRoutes = (routeList) =>
 const convertedRoutes = [
   ...convertRoutes(routes.filter((route) => route.fullScreen)),
   {
-    path: '/',
-    element: <Navigate to="/routes" replace />,
+    path: "/",
+    element: <Navigate to="/home" replace />,
   },
   {
     element: <Main />,

@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import * as PropTypes from 'prop-types';
-import './FullScreenContainer.css';
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
+import React, { useCallback, useEffect, useRef } from "react";
+import * as PropTypes from "prop-types";
+import "./FullScreenContainer.css";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
 
 const FullScreenContainer = ({ children }) => {
   const iconButton = useRef();

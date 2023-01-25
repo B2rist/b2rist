@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Box, Skeleton, Typography } from '@mui/material';
+import React from "react";
+import PropTypes from "prop-types";
+import { Box, Skeleton, Typography } from "@mui/material";
 
 const Preloader = ({ loading, children }) =>
   loading ? (
