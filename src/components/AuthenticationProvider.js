@@ -17,7 +17,7 @@ const AuthenticationProvider = () => {
           setInitialized(true);
         }
       }),
-    [initialized, dispatch]
+    [dispatch, initialized]
   );
 
   return initialized ? <AppRouter /> : <Preloader loading />;

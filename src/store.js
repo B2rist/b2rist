@@ -5,14 +5,14 @@ import routeReducer from 'services/routeSlice';
 const store = configureStore({
   reducer: {
     user: userReducer,
-    route: routeReducer,
+    route: routeReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['user/userChanged'],
-      },
-    }),
+        ignoredActions: ['user/userChanged']
+      }
+    })
 });
 
 export default store;

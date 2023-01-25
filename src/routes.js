@@ -17,7 +17,7 @@ const routes = [
     path: '/login',
     element: <LoginPage />,
     unAuthenticated: true,
-    fullScreen: true,
+    fullScreen: true
   },
   {
     path: '/home',
@@ -25,7 +25,7 @@ const routes = [
     label: 'home',
     icon: <Home />,
     unAuthenticated: true,
-    mainMenu: true,
+    mainMenu: true
   },
   {
     path: '/routes',
@@ -33,14 +33,14 @@ const routes = [
     label: 'routes',
     icon: <NearMeIcon />,
     mainMenu: true,
-    unAuthenticated: true,
+    unAuthenticated: true
   },
   {
     path: '/sharing',
     element: <SharingPage />,
     label: 'sharing',
     icon: <PeopleAlt />,
-    mainMenu: true,
+    mainMenu: true
   },
   {
     path: '/profile',
@@ -48,7 +48,7 @@ const routes = [
     label: 'profile',
     icon: <PersonPinIcon />,
     mainMenu: true,
-    unAuthenticated: true,
+    unAuthenticated: true
   },
   {
     path: '/play/:id',
@@ -56,8 +56,8 @@ const routes = [
     element: <PlayRoutePage />,
     unAuthenticated: true,
     fullScreen: true,
-    actions: [(params) => getRouteById({ id: params.id })],
-  },
+    actions: [(params) => getRouteById({ id: params.id })]
+  }
 ];
 
 export default routes;

@@ -14,5 +14,5 @@ const VideoPlayer = ({ point }) => (
 export default VideoPlayer;
 
 VideoPlayer.propTypes = {
-  point: PropTypes.object.isRequired,
+  point: PropTypes.object.isRequired
 };

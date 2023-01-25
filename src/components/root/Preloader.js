@@ -18,9 +18,9 @@ export default Preloader;
 
 Preloader.propTypes = {
   children: PropTypes.node,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 Preloader.defaultProps = {
-  children: <div />,
+  children: <div />
 };

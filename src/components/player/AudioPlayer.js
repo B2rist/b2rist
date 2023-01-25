@@ -53,5 +53,5 @@ const AudioPlayer = ({ point }) => {
 export default AudioPlayer;
 
 AudioPlayer.propTypes = {
-  point: PropTypes.object.isRequired,
+  point: PropTypes.object.isRequired
 };

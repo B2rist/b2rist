@@ -12,8 +12,8 @@ const ProductPosterLayoutRoot = styled('section')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     height: '80vh',
     minHeight: 500,
-    maxHeight: 1300,
-  },
+    maxHeight: 1300
+  }
 }));
 
 const Background = styled(Box)({
@@ -24,7 +24,7 @@ const Background = styled(Box)({
   bottom: 0,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  zIndex: -2,
+  zIndex: -2
 });
 
 const ProductPosterLayout = (props) => {
@@ -37,9 +37,8 @@ const ProductPosterLayout = (props) => {
           mb: 14,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+          alignItems: 'center'
+        }}>
         {children}
         <Box
           sx={{
@@ -48,9 +47,8 @@ const ProductPosterLayout = (props) => {
             right: 0,
             top: 0,
             bottom: 0,
-            backgroundColor: 'common.black',
             opacity: 0.5,
-            zIndex: -1,
+            zIndex: -1
           }}
         />
         <Background sx={sxBackground} />
@@ -63,5 +61,5 @@ export default ProductPosterLayout;
 
 ProductPosterLayout.propTypes = {
   sxBackground: PropTypes.object.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };

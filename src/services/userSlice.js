@@ -1,7 +1,7 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: null,
+  user: null
 };
 
 const userSlice = createSlice({
@@ -10,10 +10,10 @@ const userSlice = createSlice({
   reducers: {
     userChanged(state, action) {
       state.user = action.payload && {
-        displayName: action.payload.displayName,
+        displayName: action.payload.displayName
       };
-    },
-  },
+    }
+  }
 });
 
 const selectSelf = (state) => state.user;

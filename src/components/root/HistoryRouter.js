@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const HistoryRouter = ({ history, ...props }) => {
   const [state, setState] = useState({
     action: history.action,
-    location: history.location,
+    location: history.location
   });
   useLayoutEffect(() => history.listen(setState), [history]);
   return <Router {...props} location={state.location} navigationType={state.action} navigator={history} />;
@@ -14,5 +14,5 @@ const HistoryRouter = ({ history, ...props }) => {
 export default HistoryRouter;
 
 HistoryRouter.propTypes = {
-  history: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };

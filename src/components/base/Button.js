@@ -10,16 +10,16 @@ const ButtonRoot = styled(MuiButton)(({ theme, size }) => ({
   fontSize: theme.typography.pxToRem(14),
   boxShadow: 'none',
   '&:active, &:focus': {
-    boxShadow: 'none',
+    boxShadow: 'none'
   },
   ...(size === 'small' && {
     padding: theme.spacing(1, 3),
-    fontSize: theme.typography.pxToRem(13),
+    fontSize: theme.typography.pxToRem(13)
   }),
   ...(size === 'large' && {
     padding: theme.spacing(2, 5),
-    fontSize: theme.typography.pxToRem(16),
-  }),
+    fontSize: theme.typography.pxToRem(16)
+  })
 }));
 
 const Button = (props) => <ButtonRoot {...props} />;

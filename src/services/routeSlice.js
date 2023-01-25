@@ -3,7 +3,7 @@ import { getByIdFunction, getAllFunction } from 'services/firebaseCallFunctions'
 
 const initialState = {
   routeList: [],
-  route: null,
+  route: null
 };
 
 export const getRoutes = createAsyncThunk('route/getAll', async (request, { rejectWithValue }) => {
@@ -35,7 +35,7 @@ const routeSlice = createSlice({
       .addCase(getRouteById.fulfilled, (state, action) => {
         state.route = action.payload;
       });
-  },
+  }
 });
 
 const selectSelf = (state) => state.route;

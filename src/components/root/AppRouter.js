@@ -15,19 +15,19 @@ const convertRoutes = (routeList) =>
         {route.path ? <ProtectedActionRoute route={route} /> : route.element}
       </Suspense>
     ),
-    ...(route.children ? { children: convertRoutes(route.children) } : {}),
+    ...(route.children ? { children: convertRoutes(route.children) } : {})
   }));
 
 const convertedRoutes = [
   ...convertRoutes(routes.filter((route) => route.fullScreen)),
   {
     path: '/',
-    element: <Navigate to="/routes" replace />,
+    element: <Navigate to="/home" replace />
   },
   {
     element: <Main />,
-    children: [...convertRoutes(routes.filter((route) => !route.fullScreen))],
-  },
+    children: [...convertRoutes(routes.filter((route) => !route.fullScreen))]
+  }
 ];
 
 const AppRoutes = () => useRoutes(convertedRoutes);

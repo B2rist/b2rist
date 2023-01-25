@@ -14,5 +14,5 @@ const AppHeader = ({ text }) => (
 export default AppHeader;
 
 AppHeader.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };

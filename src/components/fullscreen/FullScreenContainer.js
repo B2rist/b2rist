@@ -43,5 +43,5 @@ const FullScreenContainer = ({ children }) => {
 export default FullScreenContainer;
 
 FullScreenContainer.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };

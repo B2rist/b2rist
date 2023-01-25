@@ -19,7 +19,7 @@ const ProtectedActionRoute = ({ route }) => {
 };
 
 ProtectedActionRoute.propTypes = {
-  route: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 export default ProtectedActionRoute;

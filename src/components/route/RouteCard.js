@@ -16,9 +16,8 @@ const RouteCard = ({ route }) => (
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+        flexDirection: 'column'
+      }}>
       <CardContent sx={{ flex: '1 0 auto' }}>
         <Typography component="div" variant="h5">
           {route.name}
@@ -32,14 +31,13 @@ const RouteCard = ({ route }) => (
           display: 'flex',
           alignItems: 'center',
           pl: 1,
-          pb: 1,
-        }}
-      >
+          pb: 1
+        }}>
         <IconButton aria-label="play" component={Link} to={`/play/${route.id}`}>
           <PlayArrowIcon
             sx={{
               height: 38,
-              width: 38,
+              width: 38
             }}
           />
         </IconButton>
@@ -55,5 +53,5 @@ const RouteCard = ({ route }) => (
 export default RouteCard;
 
 RouteCard.propTypes = {
-  route: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };

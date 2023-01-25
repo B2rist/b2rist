@@ -2,19 +2,17 @@ import * as React from 'react';
 import Button from 'components/base/Button';
 import Typography from 'components/base/Typography';
 import ProductPosterLayout from 'components/home/ProductPosterLayout';
-import { imageLink } from 'utils/googleLinks';
 
-const backgroundImage = imageLink('1I8SvoA42f4asNV1EL-KUXvsld0KRNlws');
+const backgroundImage = '/static/images/background.jpg';
 
 const ProductPoster = () => {
   return (
     <ProductPosterLayout
       sxBackground={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundColor: '#7fc7d9', // Average color of the background image.
-        backgroundPosition: 'center',
-      }}
-    >
+        backgroundColor: '#7fc7d9',
+        backgroundPosition: 'center'
+      }}>
       <img style={{ display: 'none' }} src={backgroundImage} alt="background" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         Upgrade your guide

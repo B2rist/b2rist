@@ -7,7 +7,7 @@ import Toolbar from 'components/base/Toolbar';
 const rightLink = {
   fontSize: 16,
   color: 'common.white',
-  ml: 3,
+  ml: 3
 };
 
 const AppBar = () => (
